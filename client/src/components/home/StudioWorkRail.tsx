@@ -11,7 +11,7 @@ export function StudioWorkRail() {
         <Reveal>
           <p className="text-xs uppercase tracking-[0.2em] text-muted">Selected work</p>
           <h2 className="mt-4 font-display text-section font-medium text-primary">
-            Products we&apos;ve engineered
+            Other projects we&apos;ve delivered
           </h2>
         </Reveal>
         <Reveal delay={80}>

@@ -3,7 +3,7 @@ import { capabilities } from '../../data/home';
 export function CapabilityStrip() {
   return (
     <section
-      className="border-y border-border bg-surface py-6"
+      className="border-y border-border bg-white py-6"
       aria-label="Capabilities"
     >
       <div className="overflow-hidden">

@@ -24,7 +24,7 @@ const highlights = [
 
 export function StudioProcess() {
   return (
-    <section className="border-y border-border bg-surface py-20 md:py-32">
+    <section className="border-y border-border bg-white py-20 md:py-32">
       <WideContainer>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal>

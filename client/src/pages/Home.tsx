@@ -1,6 +1,7 @@
 import { PageLayout } from '../components/layout/PageLayout';
 import { SEO } from '../components/ui/SEO';
 import { StudioHero } from '../components/home/StudioHero';
+import { StudioFeaturedWork } from '../components/home/StudioFeaturedWork';
 import { StudioStrategy } from '../components/home/StudioStrategy';
 import { StudioBuildMarquee } from '../components/home/StudioBuildMarquee';
 import { StudioWorkRail } from '../components/home/StudioWorkRail';
@@ -22,6 +23,7 @@ export function Home() {
         path="/"
       />
       <StudioHero />
+      <StudioFeaturedWork />
       <StudioStrategy />
       <StudioBuildMarquee />
       <StudioWorkRail />

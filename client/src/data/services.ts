@@ -5,8 +5,7 @@ export const homeServices: Service[] = [
     id: 'web',
     number: '01',
     title: 'Web Applications',
-    description:
-      'Scalable web experiences designed around your users, workflows and business goals.',
+    description: 'Websites and web apps that are clear, fast, and simple for your customers to use.',
     slug: 'web-development',
     icon: 'globe',
     detailRoute: true,
@@ -15,8 +14,7 @@ export const homeServices: Service[] = [
     id: 'mobile',
     number: '02',
     title: 'Mobile Applications',
-    description:
-      'Fast, intuitive mobile products built for iOS and Android experiences.',
+    description: 'Phone apps for booking trips, placing orders, and staying in touch with customers.',
     slug: 'mobile-development',
     icon: 'smartphone',
     detailRoute: true,
@@ -25,8 +23,7 @@ export const homeServices: Service[] = [
     id: 'cloud',
     number: '03',
     title: 'Cloud & DevOps',
-    description:
-      'Cloud infrastructure and delivery pipelines designed for reliability, security and smoother releases.',
+    description: 'Stable hosting and smooth updates so your site stays online when you need it.',
     slug: 'cloud-devops',
     icon: 'cloud',
     detailRoute: true,
@@ -35,8 +32,7 @@ export const homeServices: Service[] = [
     id: 'ai',
     number: '04',
     title: 'AI & Machine Learning',
-    description:
-      'Practical AI solutions that automate repetitive work, surface insights and improve digital products.',
+    description: 'Helpful automation — like sorting enquiries or suggesting answers to common questions.',
     slug: 'ai-ml',
     icon: 'brain',
     detailRoute: true,
@@ -45,8 +41,7 @@ export const homeServices: Service[] = [
     id: 'product',
     number: '05',
     title: 'Product Engineering',
-    description:
-      'End-to-end engineering support from product discovery and architecture to launch and continuous improvement.',
+    description: 'One team to plan, design, and build your product from idea through launch.',
     slug: 'product-engineering',
     icon: 'layers',
     detailRoute: false,

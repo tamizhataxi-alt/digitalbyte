@@ -5,7 +5,7 @@ import { WideContainer } from '../ui/WideContainer';
 
 export function StudioQuote() {
   return (
-    <section className="border-y border-border bg-surface py-20 md:py-28">
+    <section className="border-y border-border bg-white py-20 md:py-28">
       <WideContainer>
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           <Reveal className="lg:col-span-7">

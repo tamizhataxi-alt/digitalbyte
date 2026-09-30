@@ -6,12 +6,12 @@ export default {
       colors: {
         primary: '#0A0A0A',
         secondary: '#1A1A1A',
-        background: '#EBEBE6',
-        surface: '#F5F5F1',
+        background: '#FFFFFF',
+        surface: '#FFFFFF',
         text: '#0A0A0A',
         muted: '#6E6E6A',
         accent: '#B8FF3D',
-        border: '#D3D3CD',
+        border: '#E8E8E8',
       },
       fontFamily: {
         sans: [

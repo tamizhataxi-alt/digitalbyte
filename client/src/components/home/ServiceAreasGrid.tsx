@@ -1,48 +1,45 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { homeServices } from '../../data/services';
-import { getServiceIcon } from '../../lib/icons';
 
 export function ServiceAreasGrid() {
   return (
-    <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+    <ul className="mt-0 border-t border-primary/10">
       {homeServices.map((service, index) => {
-        const Icon = getServiceIcon(service.icon);
         const href = service.detailRoute
           ? `/services/${service.slug}`
           : `/services#${service.slug}`;
-        const spanFull = index === homeServices.length - 1;
 
         return (
-          <li key={service.id} className={spanFull ? 'sm:col-span-2' : ''}>
+          <li
+            key={service.id}
+            className={`border-b border-primary/10 ${index === 0 ? '' : ''}`}
+          >
             <Link
               to={href}
               data-cursor-card
-              className="group flex h-full gap-4 rounded-2xl border border-border bg-surface p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[0_16px_40px_-16px_rgba(0,0,0,0.12)] md:p-6"
+              className="group grid grid-cols-[2.75rem_1fr_1.25rem] items-start gap-x-4 py-6 transition-colors hover:bg-primary/[0.02] md:grid-cols-[3.5rem_1fr_1.5rem] md:gap-x-8 md:py-8"
             >
               <span
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-background text-primary transition-colors group-hover:border-primary/30 group-hover:bg-primary group-hover:text-white"
+                className="pt-0.5 font-display text-sm font-medium tabular-nums tracking-tight text-primary/40 transition-colors group-hover:text-primary md:text-base"
                 aria-hidden
               >
-                <Icon className="h-5 w-5" />
+                {service.number}
               </span>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-start justify-between gap-2">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">
-                    {service.number}
-                  </p>
-                  <ArrowUpRight
-                    className="h-4 w-4 shrink-0 text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
-                    aria-hidden
-                  />
-                </div>
-                <h3 className="mt-1 font-display text-base font-medium text-primary md:text-lg">
+
+              <div className="min-w-0">
+                <h3 className="font-display text-lg font-medium leading-tight tracking-[-0.02em] text-primary md:text-[1.35rem]">
                   {service.title}
                 </h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted line-clamp-2 md:text-sm">
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-muted md:mt-2.5 md:text-[0.9375rem] md:leading-[1.65]">
                   {service.description}
                 </p>
               </div>
+
+              <ArrowUpRight
+                className="mt-1 h-4 w-4 shrink-0 text-primary/35 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary md:mt-1.5 md:h-[1.125rem] md:w-[1.125rem]"
+                aria-hidden
+              />
             </Link>
           </li>
         );

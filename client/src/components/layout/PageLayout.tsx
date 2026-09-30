@@ -16,7 +16,7 @@ export function PageLayout({
   heroOverlay = false,
 }: PageLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-white">
       <Header
         transparent={headerTransparent}
         studio={studioHeader}

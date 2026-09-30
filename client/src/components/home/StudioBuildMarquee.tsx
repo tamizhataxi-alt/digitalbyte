@@ -5,7 +5,7 @@ import { WideContainer } from '../ui/WideContainer';
 
 export function StudioBuildMarquee() {
   return (
-    <section className="overflow-hidden border-y border-border bg-surface py-16 md:py-24">
+    <section className="overflow-hidden border-y border-border bg-white py-16 md:py-24">
       <WideContainer>
         <Reveal>
           <p className="text-xs uppercase tracking-[0.2em] text-muted">Capabilities</p>

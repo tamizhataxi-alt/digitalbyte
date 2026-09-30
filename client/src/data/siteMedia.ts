@@ -15,6 +15,13 @@ export const heroMedia = {
   video: '/media/hero-loop.mp4',
 };
 
+export const featuredWorkMedia = {
+  taxiShowcase: {
+    src: '/media/featured-taxi-showcase.jpg',
+    alt: 'Taxi in front of the Gateway of India — booking websites we built for real fleets',
+  },
+} as const satisfies Record<string, MediaAsset>;
+
 export const sectionMedia = {
   strategy: {
     src: '/media/section-strategy.jpg',

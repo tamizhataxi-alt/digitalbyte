@@ -28,10 +28,10 @@ export function Header({
   if (studio) {
     return (
       <>
-        <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6 md:pt-5">
+        <header className="fixed inset-x-0 top-0 z-50 px-3 pt-2.5 md:px-6 md:pt-5">
           <WideContainer
             as="div"
-            className={`flex h-14 items-center justify-between rounded-full border px-5 transition-all duration-500 md:h-[3.25rem] md:px-8 ${
+            className={`flex h-12 items-center justify-between rounded-full border px-3.5 transition-all duration-500 md:h-[4.25rem] md:px-9 ${
               solid
                 ? 'border-border bg-surface/90 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)] backdrop-blur-xl'
                 : onHero
@@ -41,7 +41,7 @@ export function Header({
           >
             <Link
               to="/"
-              className={`font-display text-sm font-semibold tracking-tight md:text-base ${
+              className={`font-display text-sm font-semibold tracking-tight md:text-lg ${
                 onHero ? 'text-white' : 'text-primary'
               }`}
             >
@@ -58,21 +58,21 @@ export function Header({
                     <Link
                       to={item.href}
                       aria-current={active ? 'page' : undefined}
-                      className={`px-3 py-2 text-sm lowercase transition-opacity hover:opacity-100 ${
+                      className={`px-3 py-2 text-[0.9375rem] lowercase transition-colors md:text-base ${
                         onHero
                           ? active
-                            ? 'text-white opacity-100'
-                            : 'text-white/70 opacity-90 hover:text-white'
+                            ? 'text-white'
+                            : 'text-white/80 hover:text-white'
                           : active
-                            ? 'text-primary opacity-100'
-                            : 'text-muted opacity-80'
+                            ? 'font-medium text-primary'
+                            : 'text-primary/80 hover:text-primary'
                       }`}
                     >
                       {item.label}
                     </Link>
                     {index < mainNav.length - 1 && (
                       <span
-                        className={onHero ? 'text-white/35' : 'text-muted/50'}
+                        className={onHero ? 'text-white/35' : 'text-primary/30'}
                         aria-hidden
                       >
                         /
@@ -83,17 +83,19 @@ export function Header({
               })}
             </nav>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 md:gap-2">
               <PillButton
                 to="/contact"
-                className={`hidden md:inline-flex ${onHero ? 'pill-btn-dark !bg-white !text-primary border-white' : ''}`}
+                className={`inline-flex !min-h-8 !px-3 !py-1 !text-[0.6rem] !tracking-[0.12em] md:!min-h-[44px] md:!px-6 md:!py-3 md:!text-xs md:!tracking-[0.18em] ${
+                  onHero ? 'pill-btn-dark !bg-white !text-primary border-white' : ''
+                }`}
                 dark={!onHero}
               >
                 Start a project
               </PillButton>
               <button
                 type="button"
-                className={`flex h-10 w-10 items-center justify-center rounded-full border lg:hidden ${
+                className={`flex h-8 w-8 items-center justify-center rounded-full border lg:hidden ${
                   onHero
                     ? 'border-white/25 bg-white/10 text-white'
                     : 'border-border bg-background'
@@ -103,7 +105,7 @@ export function Header({
                 aria-label="Open menu"
                 onClick={() => setMenuOpen(true)}
               >
-                <Menu className="h-5 w-5" aria-hidden />
+                <Menu className="h-4 w-4" aria-hidden />
               </button>
             </div>
           </WideContainer>
