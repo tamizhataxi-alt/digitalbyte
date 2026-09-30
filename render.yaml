@@ -4,6 +4,7 @@ services:
   - type: web
     name: digitalbyte
     runtime: node
+    nodeVersion: "20"
     region: singapore
     plan: free
     buildCommand: npm run build
