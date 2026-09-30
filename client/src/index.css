@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text font-sans antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@layer utilities {
+  .text-hero {
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+  }
+
+  .text-display {
+    font-size: clamp(2.75rem, 8vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+
+  .text-section {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  }
+
+  .hero-media-motion {
+    animation: heroKenBurns 22s ease-in-out infinite alternate;
+    transform-origin: center center;
+  }
+}
+
+@keyframes heroKenBurns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.07) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+/* Marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration, 28s) linear infinite;
+}
+
+.marquee-group {
+  display: flex;
+  shrink: 0;
+  align-items: center;
+  gap: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pill button — Mattis-style sliding label */
+.pill-btn {
+  @apply inline-flex items-center justify-center overflow-hidden rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] transition-transform duration-300;
+  min-height: 44px;
+}
+
+.pill-btn-dark {
+  @apply bg-primary text-white;
+}
+
+.pill-btn-light {
+  @apply border border-border bg-surface text-primary;
+}
+
+.pill-btn-inner {
+  @apply relative flex flex-col overflow-hidden;
+  height: 1.2em;
+}
+
+.pill-btn-text {
+  @apply block transition-transform duration-300 ease-out;
+}
+
+.pill-btn:hover .pill-btn-text {
+  transform: translateY(-100%);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accordion */
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease;
+}
+
+.accordion-panel.is-open {
+  max-height: 800px;
+  opacity: 1;
+}
+
+/* Horizontal work rail */
+.work-rail {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.work-rail > * {
+  scroll-snap-align: start;
+}
+
+/* Link hover — subtle shift */
+.hover-shift {
+  @apply transition-transform duration-300 ease-out;
+}
+
+.hover-shift:hover {
+  transform: translateX(4px);
+}
+
+/* Premium custom cursor — pointer devices only */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Lenis-style cursor: blend-mode difference, dot + lagging ring */
+.custom-cursor {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  opacity: 0;
+  mix-blend-mode: difference;
+  transition: opacity 0.25s ease;
+}
+
+.custom-cursor.is-visible {
+  opacity: 1;
+}
+
+.custom-cursor__track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.custom-cursor__track--dot {
+  z-index: 2;
+}
+
+.custom-cursor__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease;
+}
+
+.custom-cursor__ring {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  background: transparent;
+  transition:
+    width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.45s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.custom-cursor[data-state='link'] .custom-cursor__dot {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.custom-cursor[data-state='link'] .custom-cursor__ring {
+  width: 58px;
+  height: 58px;
+}
+
+.custom-cursor[data-state='card'] .custom-cursor__dot {
+  transform: scale(0.5);
+  opacity: 0.6;
+}
+
+.custom-cursor[data-state='card'] .custom-cursor__ring {
+  width: 92px;
+  height: 92px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.custom-cursor[data-state='click'] .custom-cursor__dot {
+  transform: scale(0.55);
+}
+
+.custom-cursor[data-state='click'] .custom-cursor__ring {
+  transform: scale(0.82);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: auto !important;
+  }
+
+  .custom-cursor {
+    display: none !important;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .pill-btn:hover .pill-btn-text {
+    transform: none;
+  }
+
+  .hero-media-motion {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

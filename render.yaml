@@ -1,0 +1,22 @@
+# Optional: Render Dashboard → New → Blueprint → connect this repo
+# Or create a Web Service manually with the same build/start commands.
+services:
+  - type: web
+    name: digitalbyte
+    runtime: node
+    region: singapore
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_ORIGIN
+        sync: false
+      - key: CONTACT_EMAIL
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM_EMAIL
+        sync: false
