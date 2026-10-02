@@ -1,87 +1,64 @@
-import { useLocalTime } from '../../hooks/useLocalTime';
-import { heroMedia } from '../../data/siteMedia';
-import { PillButton } from '../ui/PillButton';
-import { Reveal } from '../ui/Reveal';
+import { useHeroEntrance } from '../../hooks/useHeroEntrance';
 import { WideContainer } from '../ui/WideContainer';
-
-const disciplines = ['engineering', 'design', 'cloud', 'AI / ML'];
+import { MarketingHeroComposition } from './MarketingHeroComposition';
+import { MarketingHeroServicesBand } from './MarketingHeroServicesBand';
 
 export function StudioHero() {
-  const localTime = useLocalTime();
+  const rootRef = useHeroEntrance<HTMLElement>('marketing');
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden">
-      <img
-        src={heroMedia.poster.src}
-        alt=""
-        width={1920}
-        height={1080}
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 h-full w-full object-cover object-[center_35%] md:object-center"
-        aria-hidden
-      />
+    <section
+      ref={rootRef}
+      className="marketing-hero-teal relative overflow-x-hidden bg-[#2a7d8c] pb-6 pt-[6rem] text-white sm:pb-8 md:pt-[6.5rem] lg:pb-8"
+      aria-label="Digital marketing hero"
+    >
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-[#3d96a3] via-[#4fabb8] to-[#6ec4cf]"
+        />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(255,255,255,0.28),transparent_55%)]"
+        />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_72%_28%,rgba(219,39,119,0.12),transparent_55%)]"
+        />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(255,255,255,0.15),transparent_50%)]"
+        />
+        <div
+          className="marketing-hero-bg-loop absolute left-1/2 top-[12%] h-[min(75vw,520px)] w-[min(75vw,520px)] -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
+        />
+        <svg
+          className="marketing-hero-bg-loop-slow absolute left-0 top-[22%] h-[min(55vh,420px)] w-full opacity-55"
+          viewBox="0 0 1440 420"
+          fill="none"
+          preserveAspectRatio="none"
+          aria-hidden
+        >
+          <path
+            d="M-40 280 C 200 120, 480 360, 720 200 S 1200 80, 1500 240 L 1500 420 L -40 420 Z"
+            fill="url(#teal-wave)"
+            fillOpacity="0.35"
+          />
+          <path
+            d="M0 320 C 280 180, 520 380, 800 240 S 1280 140, 1440 300"
+            stroke="rgba(94, 234, 212, 0.35)"
+            strokeWidth="2"
+          />
+          <defs>
+            <linearGradient id="teal-wave" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="#0d9488" stopOpacity="0.05" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
 
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/65 to-primary/35"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-primary/40"
-        aria-hidden
-      />
-
-      <WideContainer className="relative z-10 flex flex-1 flex-col justify-center pb-6 pt-28 md:pb-10 md:pt-36">
-        <Reveal>
-          <h1 className="font-display text-display font-medium text-white">
-            Digital Byte
-            <sup className="ml-1 text-[0.35em] font-normal text-white/80">®</sup>
-            <span className="mt-2 block text-[clamp(1.5rem,4vw,3rem)] font-normal text-white/65">
-              software development company
-            </span>
-          </h1>
-        </Reveal>
-
-        <Reveal delay={160} className="mt-8 max-w-2xl md:mt-10">
-          <p className="text-base leading-relaxed text-white/80 md:text-lg">
-            We align product thinking, interface design and engineering into one delivery
-            loop — so your web, mobile and cloud products ship with clarity, not chaos.
-          </p>
-        </Reveal>
-
-        <Reveal delay={220} className="mt-8 flex flex-wrap items-center gap-3 text-sm text-white/60">
-          {disciplines.map((item, i) => (
-            <span key={item} className="flex items-center gap-3">
-              <span className="lowercase">{item}</span>
-              {i < disciplines.length - 1 && <span className="text-white/35" aria-hidden>/</span>}
-            </span>
-          ))}
-        </Reveal>
+      <WideContainer className="relative z-10">
+        <MarketingHeroComposition />
       </WideContainer>
 
-      <WideContainer className="relative z-10 pb-8 md:pb-10">
-        <Reveal delay={280}>
-          <div className="grid gap-4 border-t border-white/15 pt-6 text-xs uppercase tracking-[0.16em] text-white/55 md:grid-cols-4">
-            <div>
-              <p className="text-[10px] text-white/45">Enquiries</p>
-              <p className="mt-1 font-medium text-white">Open</p>
-            </div>
-            <div>
-              <p className="text-[10px] text-white/45">Local time</p>
-              <p className="mt-1 font-medium tabular-nums text-white">{localTime || '—'}</p>
-            </div>
-            <div>
-              <p className="text-[10px] text-white/45">Portfolio</p>
-              <p className="mt-1 font-medium text-white">Taxi · Commerce · ERP</p>
-            </div>
-            <div className="flex items-end justify-start md:justify-end">
-              <PillButton to="/contact" dark={false} className="!border-white/30 !bg-white !text-primary">
-                Start a project
-              </PillButton>
-            </div>
-          </div>
-        </Reveal>
-      </WideContainer>
+      <MarketingHeroServicesBand />
     </section>
   );
 }

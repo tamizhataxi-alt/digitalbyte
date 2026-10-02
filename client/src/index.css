@@ -4,13 +4,20 @@
 
 @layer base {
   :root {
-    --page-bg: #ffffff;
-    --card-bg: #ffffff;
+    --background: #f5f5f3;
+    --foreground: #111111;
+    --white: #ffffff;
+    --accent: #c8ff00;
+    --muted: #777777;
+    --border: #d9d9d5;
+    --page-bg: var(--background);
+    --card-bg: var(--white);
   }
 
   html {
     scroll-behavior: smooth;
     background-color: var(--page-bg);
+    overflow-x: hidden;
   }
 
   body {
@@ -52,12 +59,73 @@
   }
 
   .font-display {
-    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   }
 
   .hero-media-motion {
     animation: heroKenBurns 22s ease-in-out infinite alternate;
     transform-origin: center center;
+  }
+}
+
+/* Marketing hero — subtle float & background motion */
+@keyframes marketing-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes marketing-float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(1deg);
+  }
+}
+
+@keyframes marketing-bg-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, -2%, 0) scale(1.03);
+  }
+}
+
+.marketing-hero-float {
+  animation: marketing-float 5.5s ease-in-out infinite;
+}
+
+.marketing-hero-float-slow {
+  animation: marketing-float-slow 7s ease-in-out infinite;
+}
+
+.marketing-hero-float-delay {
+  animation: marketing-float 6.2s ease-in-out 0.8s infinite;
+}
+
+.marketing-hero-bg-loop {
+  animation: marketing-bg-drift 18s ease-in-out infinite;
+}
+
+.marketing-hero-bg-loop-slow {
+  animation: marketing-bg-drift 22s ease-in-out infinite reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marketing-hero-float,
+  .marketing-hero-float-slow,
+  .marketing-hero-float-delay,
+  .marketing-hero-bg-loop,
+  .marketing-hero-bg-loop-slow {
+    animation: none;
   }
 }
 

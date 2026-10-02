@@ -7,6 +7,7 @@ type PageLayoutProps = {
   headerTransparent?: boolean;
   studioHeader?: boolean;
   heroOverlay?: boolean;
+  heroLight?: boolean;
 };
 
 export function PageLayout({
@@ -14,13 +15,15 @@ export function PageLayout({
   headerTransparent = false,
   studioHeader = false,
   heroOverlay = false,
+  heroLight = false,
 }: PageLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-background">
       <Header
         transparent={headerTransparent}
         studio={studioHeader}
         heroOverlay={heroOverlay}
+        heroLight={heroLight}
       />
       <main className="flex-1">{children}</main>
       <Footer />

@@ -40,19 +40,19 @@ export function StudioFeaturedWork() {
   const liveSites = taxiStudy?.liveProjects ?? [];
 
   return (
-    <section className="border-t border-border bg-white py-20 md:py-28">
+    <section className="border-t border-border bg-background py-20 md:py-28">
       <WideContainer>
         <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-14">
           <div className="lg:col-span-4 xl:col-span-5">
-            <Reveal>
+            <Reveal variant="heading">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
                 Live today
               </p>
-              <h2 className="mt-5 font-display text-section font-medium text-primary">
+              <h2 className="mt-5 font-display text-section font-bold text-foreground">
                 Taxi booking websites your customers can use right away
               </h2>
             </Reveal>
-            <Reveal delay={100} className="mt-6 space-y-4 text-base leading-relaxed text-muted md:text-lg">
+            <Reveal delay={100} variant="text" className="mt-6 space-y-4 text-base leading-relaxed text-muted md:text-lg">
               <p>
                 Our main focus is helping taxi and fleet operators move online — riders book a trip,
                 drivers get the job, and you stay in control from one place.
@@ -90,7 +90,7 @@ export function StudioFeaturedWork() {
             </Reveal>
           </div>
 
-          <Reveal delay={80} className="hidden lg:col-span-8 lg:block xl:col-span-7">
+          <Reveal delay={80} variant="image" className="hidden lg:col-span-8 lg:block xl:col-span-7">
             <TaxiShowcaseImageDesktop />
           </Reveal>
         </div>

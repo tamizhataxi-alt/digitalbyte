@@ -4,7 +4,7 @@ import { Container } from '../components/ui/Container';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { CTASection } from '../components/home/CTASection';
 import { pageMedia } from '../data/siteMedia';
-import { MediaImage } from '../components/ui/MediaImage';
+import { Reveal } from '../components/ui/Reveal';
 
 const values = [
   {
@@ -35,20 +35,27 @@ export function About() {
       />
       <section className="pt-28 pb-16 md:pt-36 md:pb-24">
         <Container>
-          <MediaImage
-            media={pageMedia.about}
-            className="mb-12 aspect-[21/9] rounded-2xl md:aspect-[3/1]"
-            overlay="dark"
-            priority
-          />
-          <h1 className="max-w-4xl text-section font-semibold text-primary">
-            Technology is useful when it solves a real problem.
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted">
-            Digital Byte is a software development company focused on creating practical
-            digital products for businesses. Our approach combines product thinking,
-            thoughtful design and modern engineering.
-          </p>
+          <Reveal clipReveal className="mb-12 overflow-hidden rounded-2xl md:rounded-3xl">
+            <img
+              src={pageMedia.about.src}
+              alt={pageMedia.about.alt}
+              className="aspect-[21/9] w-full object-cover md:aspect-[3/1]"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </Reveal>
+          <Reveal variant="heading">
+            <h1 className="max-w-4xl text-section font-bold text-foreground">
+              Technology is useful when it solves a real problem.
+            </h1>
+          </Reveal>
+          <Reveal delay={120} variant="text">
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted">
+              Digital Byte is a software development company focused on creating practical
+              digital products for businesses. Our approach combines product thinking,
+              thoughtful design and modern engineering.
+            </p>
+          </Reveal>
         </Container>
       </section>
 

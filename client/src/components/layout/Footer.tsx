@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { footerNav, footerServices } from '../../data/navigation';
 import { CONTACT_EMAIL } from '../../lib/constants';
 import { WideContainer } from '../ui/WideContainer';
+import { BrandLogo } from '../ui/BrandLogo';
 
 export type FooterProps = {
   showNewsletter?: boolean;
@@ -13,9 +14,7 @@ export function Footer({ showNewsletter = false }: FooterProps) {
       <WideContainer as="div" className="py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
-            <p className="font-display text-sm font-semibold text-primary">
-              Digital Byte<sup className="text-[0.55em]">®</sup>
-            </p>
+            <BrandLogo size="footer" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
               Software development for ambitious digital products.
             </p>

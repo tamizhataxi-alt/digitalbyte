@@ -7,6 +7,13 @@ export type MediaAsset = {
   height?: number;
 };
 
+export const brandLogo = {
+  src: '/media/digital-byte-logo.png',
+  alt: 'Digital Byte',
+  width: 400,
+  height: 400,
+} as const satisfies MediaAsset;
+
 export const heroMedia = {
   poster: {
     src: '/media/hero-home-banner.png',
@@ -15,12 +22,48 @@ export const heroMedia = {
   video: '/media/hero-loop.mp4',
 };
 
+/** Right hero visual — set when you add `hero-marketing-visual.png` (or .jpg). */
+export const marketingHeroMedia = {
+  visual: {
+    src: '/media/hero-marketing-visual.png',
+    alt: 'Digital marketing professional with laptop, analytics and social media growth elements',
+    width: 1400,
+    height: 1400,
+  },
+};
+
 export const featuredWorkMedia = {
   taxiShowcase: {
     src: '/media/featured-taxi-showcase.jpg',
     alt: 'Taxi in front of the Gateway of India — booking websites we built for real fleets',
   },
 } as const satisfies Record<string, MediaAsset>;
+
+export const homeServiceMedia: Record<
+  'web' | 'mobile' | 'cloud' | 'ai' | 'product',
+  MediaAsset
+> = {
+  web: {
+    src: '/media/service-home-web.png',
+    alt: 'Web application dashboard illustration',
+  },
+  mobile: {
+    src: '/media/service-home-mobile.png',
+    alt: 'Mobile application screens illustration',
+  },
+  cloud: {
+    src: '/media/service-home-cloud.png',
+    alt: 'Cloud and DevOps infrastructure illustration',
+  },
+  ai: {
+    src: '/media/service-home-ai.png',
+    alt: 'AI and machine learning neural network illustration',
+  },
+  product: {
+    src: '/media/service-home-product.png',
+    alt: 'Product engineering launch illustration',
+  },
+};
 
 export const sectionMedia = {
   strategy: {
