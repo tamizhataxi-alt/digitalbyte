@@ -13,7 +13,7 @@ export function StudioFAQ() {
   }));
 
   return (
-    <section className="py-20 md:py-32">
+    <section className="hidden py-20 md:block md:py-32">
       <WideContainer>
         <Reveal>
           <p className="text-xs uppercase tracking-[0.2em] text-muted">FAQ</p>

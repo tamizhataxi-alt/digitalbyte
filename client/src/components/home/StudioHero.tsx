@@ -9,7 +9,7 @@ export function StudioHero() {
   return (
     <section
       ref={rootRef}
-      className="marketing-hero-teal relative overflow-x-hidden bg-[#2a7d8c] pb-6 pt-[6rem] text-white sm:pb-8 md:pt-[6.5rem] lg:pb-8"
+      className="marketing-hero-teal relative overflow-x-hidden bg-[#2a7d8c] pb-0 pt-[6rem] text-white md:pt-[6.5rem]"
       aria-label="Digital marketing hero"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>

@@ -1,16 +1,15 @@
 import { PageLayout } from '../components/layout/PageLayout';
 import { SEO } from '../components/ui/SEO';
 import { StudioHero } from '../components/home/StudioHero';
+import { StudioOpposingParallaxGallery } from '../components/home/StudioOpposingParallaxGallery';
 import { StudioFeaturedWork } from '../components/home/StudioFeaturedWork';
 import { StudioStrategy } from '../components/home/StudioStrategy';
 import { StudioBuildMarquee } from '../components/home/StudioBuildMarquee';
 import { StudioWorkEditorial } from '../components/home/StudioWorkEditorial';
 import { StudioWhy } from '../components/home/StudioWhy';
-import { StudioServices } from '../components/home/StudioServices';
-import { StudioProcess } from '../components/home/StudioProcess';
 import { StudioFAQ } from '../components/home/StudioFAQ';
-import { StudioQuote } from '../components/home/StudioQuote';
 import { StudioEngagement } from '../components/home/StudioEngagement';
+import { StudioClientTestimonials } from '../components/home/StudioClientTestimonials';
 import { StudioBlog } from '../components/home/StudioBlog';
 import { StudioFinalCTA } from '../components/home/StudioFinalCTA';
 
@@ -23,16 +22,15 @@ export function Home() {
         path="/"
       />
       <StudioHero />
+      <StudioOpposingParallaxGallery />
       <StudioFeaturedWork />
       <StudioStrategy />
       <StudioBuildMarquee />
       <StudioWorkEditorial />
       <StudioWhy />
-      <StudioServices />
-      <StudioProcess />
       <StudioFAQ />
-      <StudioQuote />
       <StudioEngagement />
+      <StudioClientTestimonials />
       <StudioBlog />
       <StudioFinalCTA />
     </PageLayout>

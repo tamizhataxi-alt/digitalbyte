@@ -34,8 +34,10 @@ export const marketingHeroMedia = {
 
 export const featuredWorkMedia = {
   taxiShowcase: {
-    src: '/media/featured-taxi-showcase.jpg',
-    alt: 'Taxi in front of the Gateway of India — booking websites we built for real fleets',
+    src: '/media/featured-taxi-innova.png',
+    alt: 'White Toyota Innova Crysta taxi — booking websites built for Tamil Nadu fleet operators',
+    width: 1200,
+    height: 900,
   },
 } as const satisfies Record<string, MediaAsset>;
 

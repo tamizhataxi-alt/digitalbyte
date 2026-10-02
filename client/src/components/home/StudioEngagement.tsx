@@ -10,7 +10,11 @@ export function StudioEngagement() {
   return (
     <section className="py-20 md:py-32">
       <WideContainer>
-        <Reveal variant="image" clipReveal className="mb-14 overflow-hidden rounded-2xl md:rounded-3xl">
+        <Reveal
+          variant="image"
+          clipReveal
+          className="mb-14 hidden overflow-hidden rounded-2xl md:block md:rounded-3xl"
+        >
           <img
             src={sectionMedia.engagement.src}
             alt={sectionMedia.engagement.alt}

@@ -12,7 +12,7 @@ const sizeClass = {
   header:
     'h-[3.35rem] w-auto max-w-[5.75rem] sm:h-[3.5rem] sm:max-w-[6rem] md:h-[3.75rem] md:max-w-[6.35rem]',
   footer:
-    'h-[4rem] w-auto max-w-[7rem] md:h-[4.35rem] md:max-w-[7.5rem]',
+    'h-[4.75rem] w-auto max-w-[8.25rem] md:h-[5.15rem] md:max-w-[8.85rem]',
 };
 
 export function BrandLogo({ className = '', size = 'header' }: BrandLogoProps) {
