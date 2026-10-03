@@ -12,10 +12,10 @@ type PageLayoutProps = {
 
 export function PageLayout({
   children,
-  headerTransparent = false,
-  studioHeader = false,
+  headerTransparent = true,
+  studioHeader = true,
   heroOverlay = false,
-  heroLight = false,
+  heroLight = true,
 }: PageLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
