@@ -21,10 +21,14 @@ const services = [
   },
 ];
 
-export function MarketingHeroServicesBand() {
+type MarketingHeroServicesBandProps = {
+  className?: string;
+};
+
+export function MarketingHeroServicesBand({ className = '' }: MarketingHeroServicesBandProps) {
   return (
     <section
-      className="relative hidden w-full border-b border-slate-200/80 bg-white md:block"
+      className={`relative hidden w-full border-b border-slate-200/80 bg-white md:block ${className}`}
       aria-label="Marketing services overview"
     >
       <div

@@ -1,14 +1,28 @@
 import { HeroGetStartedButton } from './HeroGetStartedButton';
 
-export function MarketingHeroWordmark() {
+type MarketingHeroWordmarkProps = {
+  immersive?: boolean;
+};
+
+export function MarketingHeroWordmark({ immersive = false }: MarketingHeroWordmarkProps) {
   return (
     <div
       data-hero="heading"
-      className="marketing-hero-wordmark relative z-20 max-md:contents shrink-0 text-left md:absolute md:left-0 md:top-[6.25rem] md:z-30 md:mb-0 md:mt-0 md:w-[min(36vw,22rem)] md:max-w-[22rem] md:translate-y-0 lg:top-28 lg:w-[min(32vw,24rem)] lg:max-w-[26rem] xl:max-w-[28rem]"
+      className={
+        immersive
+          ? 'marketing-hero-wordmark relative z-30 mt-[5.25rem] flex w-full max-w-none flex-col items-start text-left sm:mt-[5.75rem] md:absolute md:left-0 md:top-16 md:mt-0 md:max-w-[22rem] lg:top-[4.5rem] xl:top-20 lg:max-w-[26rem] xl:max-w-[28rem]'
+          : 'marketing-hero-wordmark relative z-20 max-md:contents shrink-0 text-left md:absolute md:left-0 md:top-[6.25rem] md:z-30 md:mb-0 md:mt-0 md:w-[min(36vw,22rem)] md:max-w-[22rem] md:translate-y-0 lg:top-28 lg:w-[min(32vw,24rem)] lg:max-w-[26rem] xl:max-w-[28rem]'
+      }
     >
-      <h1 className="m-0 max-md:col-start-1 max-md:row-start-1 max-md:-ml-2 max-md:justify-self-start max-md:pt-0.5 p-0">
+      <h1
+        className={
+          immersive
+            ? 'm-0 w-full p-0'
+            : 'm-0 max-md:col-start-1 max-md:row-start-1 max-md:-ml-2 max-md:justify-self-start max-md:pt-0.5 p-0'
+        }
+      >
         <span
-          className="block font-display text-[clamp(2.5rem,6.2vw,4.75rem)] font-extrabold leading-[0.92] tracking-[-0.035em] text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.12)] sm:text-[clamp(2.75rem,5vw,5.25rem)] lg:text-[clamp(3.25rem,4.2vw,5.75rem)]"
+          className="block font-display text-[clamp(2.5rem,6.2vw,4.75rem)] font-extrabold leading-[0.92] tracking-[-0.035em] text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.35)] sm:text-[clamp(2.75rem,5vw,5.25rem)] lg:text-[clamp(3.25rem,4.2vw,5.75rem)]"
         >
           Digital
         </span>
@@ -21,14 +35,22 @@ export function MarketingHeroWordmark() {
 
       <div
         data-hero="supporting"
-        className="mt-6 max-md:col-start-1 max-md:row-start-3 max-md:mt-1 max-md:justify-self-end max-md:pr-1 max-md:text-right sm:mt-7 md:mt-8 md:justify-self-auto md:text-left md:pr-0"
+        className={
+          immersive
+            ? 'mt-4 w-full sm:mt-5 md:mt-6'
+            : 'mt-6 max-md:col-start-1 max-md:row-start-3 max-md:mt-1 max-md:justify-self-end max-md:pr-1 max-md:text-right sm:mt-7 md:mt-8 md:justify-self-auto md:text-left md:pr-0'
+        }
       >
         <div
-          className="mb-4 h-px w-16 bg-gradient-to-r from-white/50 via-white/15 to-transparent max-md:ml-auto max-md:bg-gradient-to-l sm:w-[4.5rem] md:ml-0 md:bg-gradient-to-r"
+          className={`mb-3 h-px w-16 bg-gradient-to-r from-white/50 via-white/15 to-transparent sm:mb-4 sm:w-[4.5rem] ${
+            immersive ? '' : 'max-md:ml-auto max-md:bg-gradient-to-l md:ml-0 md:bg-gradient-to-r'
+          }`}
           aria-hidden
         />
         <p
-          className="max-w-[13rem] font-display text-[clamp(1rem,1.85vw,1.1875rem)] leading-[1.35] tracking-[-0.02em] max-md:ml-auto sm:max-w-[14.5rem] md:ml-0"
+          className={`max-w-[13rem] font-display text-[clamp(1rem,1.85vw,1.1875rem)] leading-[1.35] tracking-[-0.02em] sm:max-w-[14.5rem] ${
+            immersive ? '' : 'max-md:ml-auto md:ml-0'
+          }`}
         >
           <span className="block font-semibold text-white/[0.92]">We build websites</span>
           <span className="-mt-0.5 block font-medium italic text-white/[0.44]">
@@ -37,7 +59,14 @@ export function MarketingHeroWordmark() {
         </p>
       </div>
 
-      <div data-hero="cta" className="mt-9 hidden sm:mt-10 md:mt-11 md:block">
+      <div
+        data-hero="cta"
+        className={
+          immersive
+            ? 'hidden md:mt-12 md:block lg:mt-14'
+            : 'mt-9 hidden sm:mt-10 md:mt-11 md:block'
+        }
+      >
         <HeroGetStartedButton variant="teal" label="Connect with us" to="/contact" />
       </div>
     </div>

@@ -6,9 +6,7 @@ import { StudioFeaturedWork } from '../components/home/StudioFeaturedWork';
 import { StudioStrategy } from '../components/home/StudioStrategy';
 import { StudioBuildMarquee } from '../components/home/StudioBuildMarquee';
 import { StudioWorkEditorial } from '../components/home/StudioWorkEditorial';
-import { StudioWhy } from '../components/home/StudioWhy';
 import { StudioFAQ } from '../components/home/StudioFAQ';
-import { StudioEngagement } from '../components/home/StudioEngagement';
 import { StudioClientTestimonials } from '../components/home/StudioClientTestimonials';
 import { StudioBlog } from '../components/home/StudioBlog';
 import { StudioFinalCTA } from '../components/home/StudioFinalCTA';
@@ -27,9 +25,7 @@ export function Home() {
       <StudioStrategy />
       <StudioBuildMarquee />
       <StudioWorkEditorial />
-      <StudioWhy />
       <StudioFAQ />
-      <StudioEngagement />
       <StudioClientTestimonials />
       <StudioBlog />
       <StudioFinalCTA />

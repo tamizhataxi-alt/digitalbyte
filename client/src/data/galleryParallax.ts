@@ -50,13 +50,13 @@ export const galleryParallaxRightColumn: GalleryParallaxImage[] = [
     aspect: 'aspect-[3/4]',
   },
   {
-    src: '/media/gallery/07-design.jpg',
-    alt: 'UX and visual design session at a shared table',
+    src: '/media/gallery/07-design.png',
+    alt: 'Colleagues collaborating over a laptop in a modern office',
     aspect: 'aspect-[5/6]',
   },
   {
-    src: '/media/gallery/08-smm.png',
-    alt: 'Social media marketing dashboard on a wide display',
+    src: '/media/gallery/08-smm.jpg',
+    alt: 'Creative team workshop around a shared desk',
     aspect: 'aspect-[4/5]',
   },
 ];

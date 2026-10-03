@@ -7,6 +7,11 @@ export type MediaAsset = {
   height?: number;
 };
 
+export type MarketingHeroVisual = MediaAsset & {
+  /** `immersive` = edge-to-edge cover; `classic` = original contain layout */
+  layout: 'immersive' | 'classic';
+};
+
 export const brandLogo = {
   src: '/media/digital-byte-logo.png',
   alt: 'Digital Byte',
@@ -22,14 +27,33 @@ export const heroMedia = {
   video: '/media/hero-loop.mp4',
 };
 
-/** Right hero visual — set when you add `hero-marketing-visual.png` (or .jpg). */
-export const marketingHeroMedia = {
-  visual: {
+/**
+ * Hero banner image (layout/sizes unchanged in `MarketingHeroComposition`).
+ * Set to `'legacy'` to restore the original `hero-marketing-visual.png`.
+ */
+export const MARKETING_HERO_VISUAL_VARIANT = 'current' as 'current' | 'legacy';
+
+const marketingHeroVisuals = {
+  current: {
+    src: '/media/hero-marketing-visual-futuristic.jpg',
+    alt: 'Futuristic business scene with ultra-modern digital ambiance',
+    width: 1920,
+    height: 1080,
+    layout: 'immersive',
+  },
+  legacy: {
     src: '/media/hero-marketing-visual.png',
     alt: 'Digital marketing professional with laptop, analytics and social media growth elements',
     width: 1400,
     height: 1400,
+    layout: 'classic',
   },
+} satisfies Record<string, MarketingHeroVisual>;
+
+export const marketingHeroMedia = {
+  visual: marketingHeroVisuals[MARKETING_HERO_VISUAL_VARIANT],
+  /** Original banner asset — swap variant to `'legacy'` above to use this again */
+  legacyVisual: marketingHeroVisuals.legacy,
 };
 
 export const featuredWorkMedia = {

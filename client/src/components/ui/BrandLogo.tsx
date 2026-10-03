@@ -10,7 +10,7 @@ type BrandLogoProps = {
 
 const sizeClass = {
   header:
-    'h-[3.35rem] w-auto max-w-[5.75rem] sm:h-[3.5rem] sm:max-w-[6rem] md:h-[3.75rem] md:max-w-[6.35rem]',
+    'h-[3.65rem] w-auto max-w-[6.35rem] sm:h-[3.85rem] sm:max-w-[6.65rem] md:h-[4.1rem] md:max-w-[7rem]',
   footer:
     'h-[4.75rem] w-auto max-w-[8.25rem] md:h-[5.15rem] md:max-w-[8.85rem]',
 };
